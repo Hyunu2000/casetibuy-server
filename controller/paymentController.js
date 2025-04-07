@@ -4,7 +4,7 @@ import axios from "axios";
 export const paymentKakaopay = async (req, res) => {
     try {
         const { id, item_name, total_amount } = req.body;
-        const KAKAO_ADMIN_KEY = "ec4f35c9da872eac46fb9893573e4a90";
+        const KAKAO_ADMIN_KEY = "fec3bb7e9d3757cd1b2221ede24641f1";
 
         // partner_order_id를 한 번만 생성합니다.
         const partner_order_id = `order_${Date.now()}_${id}`;
@@ -42,7 +42,7 @@ export const paymentKakaopay = async (req, res) => {
 export const paymentKakaopayApprove = async (req, res) => {
     try {
         const { pg_token, tid, id, total_amount, partner_order_id } = req.body;
-        const KAKAO_ADMIN_KEY = "ec4f35c9da872eac46fb9893573e4a90";
+        const KAKAO_ADMIN_KEY = "fec3bb7e9d3757cd1b2221ede24641f1";
 
         const response = await axios.post(
             "https://kapi.kakao.com/v1/payment/approve",
